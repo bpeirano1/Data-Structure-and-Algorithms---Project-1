@@ -32,6 +32,12 @@ int main(int argc, char** argv)
 
     /* ------------- POR IMPLEMENTAR -------------- */
     /* Aqui debes crear el ComponentTree de la imagen.    */
+    for (int i=0 ; i < image->pixel_count;i++){
+        printf("%i,",image->pixels[i]);
+    };
+    printf("\n");
+    printf("width: %i\n", image->width);
+    printf("height: %i\n", image->height );
 
 
     // Creamos una nueva imagen de igual tamaño, para el output
