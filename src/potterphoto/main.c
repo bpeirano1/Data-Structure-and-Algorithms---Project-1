@@ -48,6 +48,9 @@ int main(int argc, char** argv)
     // printf("\n");
     // printf("width: %i\n",image->width);
     // printf("height: %i\n",image->height);
+
+    int* mem_umbral = calloc(128,sizeof(int));
+    Array* umbrales_array = array_init(128);
     
 
     // Creo una lista de estructura pixeles
@@ -55,8 +58,13 @@ int main(int argc, char** argv)
         Pixel* px = pixel_init(i,image->pixels[i]);
         pixels_list[i] = px;
         array_append(int_pixel_origin_list,i);
-        // pixel_print(px);
+        if (!mem_umbral[image->pixels[i]])
+        {
+            mem_umbral[image->pixels[i]]=1;
+            array_append(umbrales_array,image->pixels[i]);
+        }
     };
+    array_sort(umbrales_array);
 
     // Unimos los pixeles
     for (int i=0 ; i < image->pixel_count;i++){
@@ -96,7 +104,7 @@ int main(int argc, char** argv)
         };   
     };
 
-    Array* umbrales_array = counter_umbral(image->pixels,image->pixel_count);
+    // Array* umbrales_array = counter_umbral(image->pixels,image->pixel_count);
     // printf("contador umbrales: %i\n", umbrales_array->length);
     // for (int i=0 ; i < umbrales_array->length;i++){
     //     printf("Umbral %i\n",umbrales_array->array[i]);
