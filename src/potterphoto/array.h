@@ -20,3 +20,5 @@ Array* array_init(int size);
 void array_append(Array* array, int value);
 void array_destroy(Array* array);
 int array_in(Array* array, int value);
+void array_sort(Array* array);
+void array_printf(Array* array);

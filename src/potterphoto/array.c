@@ -42,3 +42,25 @@ int array_in(Array* array, int value){
     return 0;
     
 }
+void array_sort(Array* array){
+    // Me base en el siguiente código para ordenar
+    // https://www.javatpoint.com/c-program-to-sort-the-elements-of-an-array-in-ascending-order
+    for (int i = 0; i < array->length; i++) {     
+        for (int j = i+1; j < array->length; j++) {     
+           if(array->array[i] > array->array[j]) {    
+               int temp = array->array[i];    
+               array->array[i] = array->array[j];    
+               array->array[j] = temp;    
+           }     
+        }     
+    }    
+};
+void array_printf(Array* array){
+    printf("Vecindario: ");
+    for (int i = 0; i < array->length; i++)
+    {
+        printf("%i,", array->array[i]);
+    };
+    printf("\n");
+    
+};
