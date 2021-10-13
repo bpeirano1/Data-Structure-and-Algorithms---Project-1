@@ -104,17 +104,17 @@ int main(int argc, char** argv)
 
     NodeTree * root = node_tree_init(counter_node_id[0],umbrales_array->array[0],int_pixel_origin_list);
     counter_node_id[0] +=1 ;
-    printf("int_pixel_origin: %i\n", int_pixel_origin_list->length);
+    // printf("int_pixel_origin: %i\n", int_pixel_origin_list->length);
     // node_tree_printf(root);
 
     int umbral_counter = 1;
     recursion(root,umbral_counter,umbrales_array,pixels_list,counter_node_id);
 
-    printf("cantidad de nodos: %i\n", counter_node_id[0]);
+    // printf("cantidad de nodos: %i\n", counter_node_id[0]);
 
-    node_recursive_printerf(root);
+    // node_recursive_printerf(root);
 
-    printf("cantidad de nodos: %i\n", counter_node_id[0]);
+    // printf("cantidad de nodos: %i\n", counter_node_id[0]);
 
 
 
