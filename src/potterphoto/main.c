@@ -61,10 +61,17 @@ int main(int argc, char** argv)
         if (!mem_umbral[image->pixels[i]])
         {
             mem_umbral[image->pixels[i]]=1;
-            array_append(umbrales_array,image->pixels[i]);
         }
     };
-    array_sort(umbrales_array);
+    for (int i = 0; i < 128; i++)
+    {
+        if (mem_umbral[i])
+        {
+         array_append(umbrales_array,i);   
+        }
+        
+    }
+    
 
     // Unimos los pixeles
     for (int i=0 ; i < image->pixel_count;i++){
@@ -169,6 +176,7 @@ int main(int argc, char** argv)
     array_destroy(umbrales_array);
     free(counter_node_id);
     array_destroy(int_pixel_origin_list);
+    free(mem_umbral);
 
     // Terminamos exitosamente
     return 0;
