@@ -60,7 +60,7 @@ void recursion(NodeTree * node, int umbral_counter, Array* list_umbrales, Pixel*
             dfs_pixel(pixels_list[node -> neighborhood->array[i]],visited,neighborhood, list_umbrales->array[umbral_counter]);
             if (neighborhood->length)
             {
-                array_sort(neighborhood);
+                // array_sort(neighborhood);
                 if (neighborhood->length == node->neighborhood->length)
                 {
                     recursion(node,umbral_counter+1,list_umbrales,pixels_list, counter_node_id);
