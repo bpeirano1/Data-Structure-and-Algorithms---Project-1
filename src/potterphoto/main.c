@@ -123,7 +123,7 @@ int main(int argc, char** argv)
     // node_tree_printf(root);
 
     int umbral_counter = 1;
-    recursion(root,umbral_counter,umbrales_array,pixels_list,counter_node_id);
+    recursion(root,umbral_counter,umbrales_array,pixels_list,counter_node_id,image->pixel_count);
 
     // printf("cantidad de nodos: %i\n", counter_node_id[0]);
 
